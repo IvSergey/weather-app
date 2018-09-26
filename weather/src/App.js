@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-// import WeatherDisplay from "./Components/WeatherDisplay"
+import WeatherDisplay from "./Components/WeatherDisplay"
 
 const PLACES = [
   { name: "Palo Alto", zip: "94303" },
@@ -47,11 +47,11 @@ class App extends Component {
       
 // }
 
-class WeatherDisplay extends Component {
-  render() {
-    return  <h1>Displaying weather for city {this.props.zip}</h1>;
+// class WeatherDisplay extends Component {
+//   render() {
+//     return  <h1>Displaying weather for city {this.props.zip}</h1>;
        
-  }
-}
+//   }
+// }
 
 export default App;
