@@ -14,7 +14,7 @@ export default class WeatherDisplay extends Component {
     zip +
     "&appid=b1b35bba8b434a28a0be2a3e1071ae5b&units=imperial";
     fetch(URL).then(res=> res.json()).then(json=>{
-      this.setState({WeatherData:json });
+      this.setState({weatherData:json });
     });
   }
     render() {

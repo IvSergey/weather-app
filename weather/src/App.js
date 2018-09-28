@@ -23,6 +23,8 @@ class App extends Component {
     const activePlace = this.state.activePlace;
     return (
       <div className="App">
+        <input type="text"></input>
+        <button onClick>Добавить</button>
         {PLACES.map((place, index) => (
           <button key={index} onClick={()=>{
             this.setState({activePlace: index});
