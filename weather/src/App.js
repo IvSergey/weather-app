@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import WeatherDisplay from "./Components/WeatherDisplay"
+import WeatherDisplay from "./Components/WeatherDisplay";
+import "bootstrap/dist/css/bootstrap.css";
+
+
+import { Navbar, NavItem, Nav, Grid, Row, Col } from "react-bootstrap";
 
 const PLACES = [
   { name: "Palo Alto", zip: "94303" },
@@ -24,7 +28,9 @@ class App extends Component {
     return (
       <div className="App">
         <input type="text"></input>
-        <button onClick>Добавить</button>
+        <button onClick={()=>{
+          PLACES.unshift
+        }}>Добавить</button>
         {PLACES.map((place, index) => (
           <button key={index} onClick={()=>{
             this.setState({activePlace: index});
