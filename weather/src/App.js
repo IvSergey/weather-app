@@ -5,16 +5,16 @@ import WeatherDisplay from "./Components/WeatherDisplay";
 import "bootstrap/dist/css/bootstrap.css";
 
 
-import { Navbar, NavItem, Nav, Grid, Row, Col } from "react-bootstrap";
+// import { Navbar, NavItem, Nav, Grid, Row, Col } from "react-bootstrap";
 
 const PLACES = [
-  { name: "Palo Alto", zip: "94303" },
-  { name: "San Jose", zip: "94088" },
-  { name: "Santa Cruz", zip: "95062" },
-  { name: "Honolulu", zip: "96803" }
+  { name: "Palo Alto"},
+  { name: "San Jose"},
+  { name: "Santa Cruz"},
+  { name: "Honolulu"}
 ];
-
-
+console.log(PLACES)
+const city = document.querySelector ("#city");
 
 class App extends Component {
   constructor() {
@@ -27,10 +27,10 @@ class App extends Component {
     const activePlace = this.state.activePlace;
     return (
       <div className="App">
-        <input type="text"></input>
-        <button onClick={()=>{
-          PLACES.unshift
-        }}>Добавить</button>
+        <input type="text" id="city"></input>
+          <button onClick={()=>{
+            PLACES.push(city.value)
+          }}>Добавить</button>
         {PLACES.map((place, index) => (
           <button key={index} onClick={()=>{
             this.setState({activePlace: index});
@@ -40,7 +40,7 @@ class App extends Component {
           ))}
           <WeatherDisplay 
             key={activePlace}
-            zip={PLACES[activePlace].zip}
+            name={PLACES[activePlace].name}
           />
       </div>
     );
